@@ -1,3 +1,4 @@
+/* GOOGLE Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap');
 
 * {
@@ -123,7 +124,7 @@ ul {
 .selfcare-card {
     background: var(--selfcare-card-color);
 }
-/* card */
+/* Card */
 
 .card-content {
     background-color: var(---card-content-color);
@@ -164,17 +165,27 @@ ul {
     font-weight: 400;
     justify-self: end;
 }
+.report-type {
+    text-transform: capitalize;
+}
 
 @media screen and (min-width: 1024px) {
     .dashboard-container {
+        transition: 1s;
+        align-content: center;
         justify-content: center;
-        grid-template-columns: repeat(4, 255px);
-        grid-template-rows: repeat(2, 250px);
+        grid-template-columns: repeat(auto-fill, minmax(255px, 20%));
+        grid-template-rows: repeat(auto-fit, 245px);
         gap: 30px;
+        height: calc(95vh - 1rem);
     }
 
     .report-header {
-        grid-row: 1 / -1;
+        grid-row: 1 / span 3;
+    }
+    .profile-image {
+        width: 5.25rem;
+        height: 5.25rem;
     }
     .owner-info {
         border-radius: 1rem;
@@ -193,7 +204,6 @@ ul {
         padding-left: 2rem;
     }
 
-    
     .card-content {
         height: 205px;
         padding: 2rem 1.5rem;
@@ -206,5 +216,10 @@ ul {
         grid-column: 1/-1;
         justify-self: unset;
         margin-top: 0.5rem;
+    }
+}
+@media screen and (min-width: 1158px ) {
+    .report-header {
+        grid-row: 1/ span 2;
     }
 }
